@@ -12,8 +12,8 @@ jobs:
     steps:
       - run: sudo apt-get update && sudo apt-get upgrade # Update software
       - run: sudo apt-get install -y sqlite3 libsqlite3-dev
-      - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-      - run: chmod +x ./cc-test-reporter
+      - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > /tmp/cc-test-reporter
+      - run: chmod +x /tmp/cc-test-reporter
       - checkout # pull down our git code.
       - ruby/install-deps # use the ruby orb to install dependencies
       # use the node orb to install our packages
@@ -58,7 +58,7 @@ jobs:
           command: bundle exec rails test
       - run:
           name: Update Test Converage
-          command: ../cc-test-reporter -t simplecov
+          command: /tmp/cc-test-reporter -t simplecov
 # We use workflows to orchestrate the jobs that we declared above.
 workflows:
   version: 2
