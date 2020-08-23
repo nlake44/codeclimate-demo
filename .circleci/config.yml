@@ -65,7 +65,7 @@ jobs:
           command: ./cc-test-reporter format-coverage -t simplecov -o "coverage/codeclimate.json"
       - run:
           name: Upload Coverage
-          command: ./cc-test-reporter upload-coverage -i coverage/codeclimage.json
+          command: ./cc-test-reporter upload-coverage -i coverage/codeclimate.json
 # We use workflows to orchestrate the jobs that we declared above.
 workflows:
   version: 2
