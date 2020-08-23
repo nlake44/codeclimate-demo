@@ -5,7 +5,7 @@ class ArticleTest < ActiveSupport::TestCase
      assert true
    end
 
-   test "must have title" do
+   test "validate model" do
      @article = Article.new
      assert @article.valid?
    end
