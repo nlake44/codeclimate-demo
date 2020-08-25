@@ -1,2 +1,2 @@
 # README
-This app is to kick the tires on CodeClimate.
+This rails app is to kick the tires on CodeClimate.
